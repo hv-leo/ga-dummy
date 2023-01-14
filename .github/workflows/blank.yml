@@ -14,8 +14,14 @@ jobs:
     - run: echo "Running static code analysis"
     - run: echo "Running unit tests"
     - run: echo "Pushing image"
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
     - run: echo "Setting up kubectl"
     - run: echo "Setting up cluster access"
     - run: echo "Deploying to cluster"
+  notify:
+    runs-on: ubuntu-latest
+    steps:
     - run: echo "Sending success Slack message"
     - run: echo "Sending failure Slack message"
