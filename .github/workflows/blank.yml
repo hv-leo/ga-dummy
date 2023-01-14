@@ -9,19 +9,31 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - run: echo "Checking out code"
-    - run: echo "Building image"
-    - run: echo "Running static code analysis"
-    - run: echo "Running unit tests"
-    - run: echo "Pushing image"
+    - name: Checkout code
+      run: echo "Checking out code"
+    - name: Build image
+      run: echo "Building image"
+    - name: Run static code analysis
+      run: echo "Running static code analysis"
+    - name: Run unit tests
+      run: echo "Running unit tests"
+    - name: Push image
+      run: echo "Pushing image"
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - run: echo "Setting up kubectl"
-    - run: echo "Setting up cluster access"
-    - run: echo "Deploying to cluster"
+    - name: Set up kubectl
+      run: echo "Setting up kubectl"
+    - name: Set up cluster access
+      run: echo "Setting up cluster access"
+    - name: Deploy to cluster
+      run: echo "Deploying to cluster"
   notify:
     runs-on: ubuntu-latest
     steps:
-    - run: echo "Sending success Slack message"
-    - run: echo "Sending failure Slack message"
+    - name: Send success Slack message
+      if: success()
+      run: echo "Sending success Slack message"
+    - name: Send failure Slack message
+      if: failure()
+      run: echo "Sending failure Slack message"
