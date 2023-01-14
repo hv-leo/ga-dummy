@@ -1,0 +1,21 @@
+name: Develop
+
+on:
+  push:
+    branches:
+      - feature/*
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - run: echo "Checking out code"
+    - run: echo "Building image"
+    - run: echo "Running static code analysis"
+    - run: echo "Running unit tests"
+    - run: echo "Pushing image"
+    - run: echo "Setting up kubectl"
+    - run: echo "Setting up cluster access"
+    - run: echo "Deploying to cluster"
+    - run: echo "Sending success Slack message"
+    - run: echo "Sending failure Slack message"
