@@ -20,7 +20,7 @@ jobs:
     - name: Push image
       run: echo "Pushing image"
   deploy:
-    if: success(jobs.build)
+    if: success()
     runs-on: ubuntu-latest
     steps:
     - name: Set up kubectl
